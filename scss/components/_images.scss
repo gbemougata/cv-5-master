@@ -1,0 +1,33 @@
+.img {
+  &--logo{
+    display:block;
+    margin:auto;
+    height:auto;
+    padding:10px;
+    width:20%;
+    @include mq(medium){
+      width:65%;
+      margin-bottom:10px;
+      padding-top:10px;
+      display:block;
+      float:left;
+      padding-right:105px;
+
+    }
+    }
+}
+.img--avatar{
+
+  margin:0 auto;
+  display:block;
+}
+.img--frame{
+  width:95%;
+  display:block;
+  margin:0 auto;
+  padding: 10px;
+  @include mq(medium){
+    width:100%;
+    margin-right:10px;
+  }
+}

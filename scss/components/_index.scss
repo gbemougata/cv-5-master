@@ -1,0 +1,18 @@
+//import all components folders into _index.scss
+/*****import buttons*****/
+@import "grid";
+
+
+@import "typography" ;
+
+/********import grid*****/
+@import "buttons" ;
+
+/**********import navigation****/
+@import "forms";
+@import "navigation";
+
+
+
+
+@import "images";

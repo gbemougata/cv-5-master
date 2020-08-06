@@ -1,0 +1,30 @@
+
+
+[class^="btn--"]{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  padding:20px;
+  margin:10px;
+  width:100%;
+  padding-right:10px;
+  @include bg-colors($ui-colors);
+  @include mq(medium){
+    width:auto;
+    display: inline-flex;
+    justify-content: space-between;
+    align-self: center;
+    padding: 30px;
+  }
+
+
+
+}
+
+.form .theme__colors {
+
+    width:100%;
+}
+.form .theme__colors:hover{
+  background-color: $color-secondary;
+}

@@ -1,0 +1,106 @@
+//mixins for breakpoint
+
+
+
+@mixin e($element){
+  &__#{$elemet} {
+    @content;
+  }
+}
+
+@mixin m($modifier){
+  &--#($modifier){
+    @content;
+  }
+}
+
+
+
+
+
+
+@mixin bg-colors($map){
+  @each $theme, $color in $map{
+    .btn--#{$theme} {
+      background-color:$color;
+    }
+  }
+}
+
+@mixin grid-color($map){
+  @each $theme, $color in $map {
+    &__#{$theme}{
+        background-color:$color;
+        width:85%;
+      margin:20px;
+
+@content
+      }
+
+    }
+
+
+}
+@mixin grid-columns {
+
+  @for $i from 1 through $g-col-count {
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width) ;
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+    .grid__col--#{$i} {
+      width: percentage($target / $context);
+    }
+  }
+}
+
+@mixin mq($break){
+  @if $break=="small"{
+    @media (min-width: $brkpoint-sm) and (max-width: $brkpoint-md) {
+      @content;
+    }
+  }
+  @else if $break=="medium" {
+    @media (min-width:$brkpoint-md + 1){
+      @content;
+    }
+  }
+  @else if $break=="large" {
+    @media (min-width: $brkpoint-lg) {
+      @content;
+    }
+  }
+  @else {
+    @error "give me a break  ! try more please '#{$break}'."
+  }
+
+}
+
+@mixin desk-flex {
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  @content;
+}
+
+@mixin creativity{
+  @keyframes color {
+    from{
+      background-color:$Azure;
+    }
+    to {
+      background-color:$color-secondary;
+    }
+  }
+}
+//@mixin size-grow{
+
+//@for $i from 1 through $g-col-count {
+  //&__col--#{$i}{
+    //@if $i==5 {
+      //flex-grow: 1;
+    //}
+    //@else if $i==8{
+      //flex-grow:2;
+    //}
+//}
+  //}
+//}
